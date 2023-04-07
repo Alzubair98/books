@@ -10,17 +10,20 @@ const BookCreate = ({ onCreate }) => {
   };
 
   return (
-    <div>
+    <div className="book-create">
       <form onSubmit={handleSubmit}>
         <label>Title</label>
         <input
+          className="input"
           value={title}
           onChange={(e) => {
             setTitle(e.target.value);
           }}
         />
         <br />
-        <button type="submit">onSubmit</button>
+        <button className="button" type="submit">
+          Create
+        </button>
       </form>
     </div>
   );
