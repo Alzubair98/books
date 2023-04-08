@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const BookEdit = ({ book, onEdit, handleShow, showEdit }) => {
+const BookEdit = ({ book, onEdit, handleShow }) => {
   const [title, setTitle] = useState(book.title);
   const [author, setAuthor] = useState(book.author);
 
@@ -8,7 +8,7 @@ const BookEdit = ({ book, onEdit, handleShow, showEdit }) => {
     e.preventDefault();
 
     onEdit(book.id, title, author);
-    handleShow(!showEdit);
+    handleShow();
   };
 
   return (

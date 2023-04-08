@@ -8,8 +8,8 @@ const BookShow = ({ book, onDelete, onEdit }) => {
     onDelete(book.id);
   };
 
-  const handleShow = (show) => {
-    setShowEdit(show);
+  const handleShow = () => {
+    setShowEdit(false);
   };
 
   return (
@@ -26,12 +26,7 @@ const BookShow = ({ book, onDelete, onEdit }) => {
           <h2>Book Author: {book.author}</h2>{" "}
         </div>
       ) : (
-        <BookEdit
-          book={book}
-          onEdit={onEdit}
-          handleShow={handleShow}
-          showEdit={showEdit}
-        />
+        <BookEdit book={book} onEdit={onEdit} handleShow={handleShow} />
       )}
     </div>
   );
