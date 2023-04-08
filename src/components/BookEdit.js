@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-const BookEdit = () => {
-  const [title, setTitle] = useState();
-  const [author, setAuthor] = useState();
+const BookEdit = ({ book }) => {
+  const [title, setTitle] = useState(book.title);
+  const [author, setAuthor] = useState(book.author);
 
   const handleSubmit = (e) => {
     e.preventDefault();

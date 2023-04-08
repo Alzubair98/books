@@ -22,7 +22,7 @@ const BookShow = ({ book, onDelete }) => {
           <h2>Book Author: {book.author}</h2>{" "}
         </div>
       ) : (
-        <BookEdit />
+        <BookEdit book={book} />
       )}
     </div>
   );
