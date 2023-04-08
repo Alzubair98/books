@@ -6,9 +6,7 @@ const BookEdit = ({ book, onEdit, handleShow }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    onEdit(book.id, title, author);
-    handleShow();
+    handleShow(book.id, title, author);
   };
 
   return (
