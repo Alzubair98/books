@@ -10,8 +10,6 @@ function App() {
     setBooks([...books, { id: uuidv4(), title, author }]);
   };
 
-  console.log(books);
-
   const DeleteBookById = (id) => {
     setBooks(
       books.filter((book) => {
@@ -23,7 +21,7 @@ function App() {
   return (
     <div className="app">
       <BookCreate onCreate={createBook} />
-      <BookList books={books} DeleteBookById={DeleteBookById} />
+      <BookList books={books} onDelete={DeleteBookById} />
     </div>
   );
 }
