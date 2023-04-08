@@ -12,12 +12,18 @@ function App() {
 
   console.log(books);
 
-  const DeleteBookById = (id) => {};
+  const DeleteBookById = (id) => {
+    setBooks(
+      books.filter((book) => {
+        return book.id !== id;
+      })
+    );
+  };
 
   return (
     <div className="app">
       <BookCreate onCreate={createBook} />
-      <BookList books={books} />
+      <BookList books={books} DeleteBookById={DeleteBookById} />
     </div>
   );
 }
