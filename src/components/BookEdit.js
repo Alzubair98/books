@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 
-const BookEdit = ({ book }) => {
+const BookEdit = ({ book, onEdit, handleShow, showEdit }) => {
   const [title, setTitle] = useState(book.title);
   const [author, setAuthor] = useState(book.author);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("new title and author", title, author);
+
+    onEdit(book.id, title, author);
+    handleShow(!showEdit);
   };
+
   return (
     <form className="book-edit" onSubmit={handleSubmit}>
       <label>Title</label>
