@@ -1,9 +1,9 @@
 import React from "react";
 
-const BookShow = () => {
+const BookShow = ({ book }) => {
   return (
     <div>
-      <h1>BookShow</h1>
+      <h2>{book.title}</h2>
     </div>
   );
 };
