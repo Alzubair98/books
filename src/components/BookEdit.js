@@ -2,9 +2,15 @@ import React from "react";
 
 const BookEdit = () => {
   return (
-    <div>
-      <h1>BookEdit</h1>
-    </div>
+    <form className="book-edit">
+      <label>Title</label>
+      <input />
+      <label>Author</label>
+      <input />
+      <button type="submit" className="button is-primary">
+        Save
+      </button>
+    </form>
   );
 };
 
