@@ -2,11 +2,13 @@ import React, { useState, useRef } from "react";
 
 const BookCreate = ({ onCreate }) => {
   const [title, setTitle] = useState("");
+  const [author, setAuthor] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onCreate(title);
+    onCreate(title, author);
     setTitle("");
+    setAuthor("");
   };
 
   return (
@@ -20,7 +22,12 @@ const BookCreate = ({ onCreate }) => {
             setTitle(e.target.value);
           }}
         />
-        <br />
+        <label>Author</label>
+        <input
+          className="input"
+          value={author}
+          onChange={(e) => setAuthor(e.target.value)}
+        />
         <button className="button" type="submit">
           Create
         </button>

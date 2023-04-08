@@ -5,8 +5,8 @@ import BookCreate from "./components/BookCreate";
 function App() {
   const [books, setBooks] = useState([]);
 
-  const createBook = (title) => {
-    setBooks([...books, { id: books.length, title: title }]);
+  const createBook = (title, author) => {
+    setBooks([...books, { id: books.length, title: title, author: author }]);
   };
 
   console.log(books);
