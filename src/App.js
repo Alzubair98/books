@@ -10,8 +10,15 @@ function App() {
     setBooks([...books, { id: uuidv4(), title, author }]);
   };
 
-  const EditBook = (id, title, author) => {
-    console.log("the edit fuction", id, title, author);
+  const EditBook = (id, newtitle, newauthor) => {
+    setBooks(
+      books.map((book) => {
+        if (book.id === id) {
+          return { ...book, title: newtitle, author: newauthor };
+        }
+        return book;
+      })
+    );
   };
 
   const DeleteBookById = (id) => {

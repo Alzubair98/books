@@ -20,7 +20,7 @@ const BookShow = ({ book, onDelete, onEdit }) => {
       <button className="edit" onClick={() => setShowEdit(!showEdit)}>
         Edit
       </button>
-      {showEdit ? (
+      {!showEdit ? (
         <div>
           <h2>Book Title: {book.title}</h2>
           <h2>Book Author: {book.author}</h2>{" "}
