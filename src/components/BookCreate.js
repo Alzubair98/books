@@ -13,6 +13,7 @@ const BookCreate = ({ onCreate }) => {
 
   return (
     <div className="book-create">
+      <h1>Add a Book</h1>
       <form onSubmit={handleSubmit}>
         <label>Title</label>
         <input

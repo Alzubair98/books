@@ -2,8 +2,9 @@ import React from "react";
 
 const BookShow = ({ book }) => {
   return (
-    <div>
-      <h2>{book.title}</h2>
+    <div className="book-show">
+      <h2>Book Title: {book.title}</h2>
+      <h2>Book Author: {book.author}</h2>
     </div>
   );
 };
