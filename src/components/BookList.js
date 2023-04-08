@@ -6,7 +6,7 @@ const BookList = ({ books }) => {
     <div>
       <h1>{books.length}</h1>
       {books.map((book) => {
-        return <BookShow book={book} />;
+        return <BookShow key={book.id} book={book} />;
       })}
     </div>
   );
