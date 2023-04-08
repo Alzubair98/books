@@ -21,6 +21,7 @@ const BookShow = ({ book, onDelete, onEdit }) => {
       <button className="edit" onClick={() => setShowEdit(!showEdit)}>
         Edit
       </button>
+      <img alt="books" src="https://picsum.photos/300/200" />
       {!showEdit ? (
         <div>
           <h2>Book Title: {book.title}</h2>
