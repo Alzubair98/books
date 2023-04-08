@@ -10,11 +10,8 @@ function App() {
     setBooks([...books, { id: books.length, title, author }]);
   };
 
-  console.log(books);
-
   return (
     <div className="App">
-      <h1>hello</h1>
       <BookCreate onCreate={createBook} />
       <BookList books={books} />
     </div>
