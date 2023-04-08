@@ -1,9 +1,9 @@
 import React from "react";
 
-const BookList = () => {
+const BookList = ({ books }) => {
   return (
     <div>
-      <h1>BookList</h1>
+      <h1>{books.length}</h1>
     </div>
   );
 };
