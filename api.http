@@ -10,3 +10,17 @@ Content-Type: application/json
     "title": "harry potter",
     "author": "i dont know"
 }
+
+####
+PUT  http://localhost:3001/books/2 HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Dark Tower",
+    "author": "i dont know"
+}
+
+###
+
+DELETE http://localhost:3001/books/2 HTTP/1.1
+Content-Type: application/json
