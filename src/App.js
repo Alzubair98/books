@@ -7,15 +7,15 @@ import axios from "axios";
 function App() {
   const [books, setBooks] = useState([]);
 
-  useEffect(() => {
-    fetchBooks();
-  }, []);
-
   const fetchBooks = async () => {
     const response = await axios.get("http://localhost:3001/books");
 
     setBooks(response.data);
   };
+
+  useEffect(() => {
+    fetchBooks();
+  }, []);
 
   const createBook = async (title, author) => {
     // setBooks([...books, { id: uuidv4(), title, author }]); create book in set it in the state
