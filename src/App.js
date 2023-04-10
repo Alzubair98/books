@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import BookCreate from "./components/BookCreate";
 import BookList from "./components/BookList";
 // import { v4 as uuidv4 } from "uuid";
@@ -6,6 +6,12 @@ import axios from "axios";
 
 function App() {
   const [books, setBooks] = useState([]);
+
+  const fetchBooks = async () => {
+    const response = await axios.get("http://localhost:3001/books");
+
+    setBooks(response.data);
+  };
 
   const createBook = async (title, author) => {
     // setBooks([...books, { id: uuidv4(), title, author }]); create book in set it in the state
@@ -32,11 +38,13 @@ function App() {
   };
 
   const DeleteBookById = (id) => {
-    setBooks(
-      books.filter((book) => {
-        return book.id !== id;
-      })
-    );
+    // setBooks(
+    //   books.filter((book) => {
+    //     return book.id !== id;
+    //   })
+    // );
+
+    const response = axios.delete(`http://localhost:3001/books${id}`);
   };
 
   return (
