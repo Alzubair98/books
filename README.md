@@ -34,6 +34,7 @@
 4. "code ." To open the project on your local editor
 
 5. Please click on the "access link" so you can check the live demo
+6. you will need to run "npm run server"
 
 ## Authors :writing_hand: :busts_in_silhouette:
 
