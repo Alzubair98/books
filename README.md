@@ -19,7 +19,7 @@
 - **Webpack:** Bundler form JavaScript files for usage in a browser.
 - **Jest:** JS testing framework used for the app testing.
 - **REACT JS:** JS library used for the basic structure (components).
-- **Redux/Redux Toolkit:** JS library used to handle the app state changes/updates.
+- **Json-Server:** Database server.
 
 ## Preview :eye_speech_bubble:
 
