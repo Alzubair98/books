@@ -7,6 +7,10 @@ import axios from "axios";
 function App() {
   const [books, setBooks] = useState([]);
 
+  useEffect(() => {
+    fetchBooks();
+  }, []);
+
   const fetchBooks = async () => {
     const response = await axios.get("http://localhost:3001/books");
 
@@ -37,14 +41,14 @@ function App() {
     );
   };
 
-  const DeleteBookById = (id) => {
-    // setBooks(
-    //   books.filter((book) => {
-    //     return book.id !== id;
-    //   })
-    // );
+  const DeleteBookById = async (id) => {
+    setBooks(
+      books.filter((book) => {
+        return book.id !== id;
+      })
+    );
 
-    const response = axios.delete(`http://localhost:3001/books${id}`);
+    const response = await axios.delete(`http://localhost:3001/books/${id}`);
   };
 
   return (
