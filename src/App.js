@@ -44,8 +44,6 @@ function App() {
       title: newtitle,
       author: newauthor,
     });
-
-    console.log(response);
   };
 
   const DeleteBookById = async (id) => {
