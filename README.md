@@ -5,7 +5,7 @@
 
 # Book Store
 
-> A Website App built with React and Redux for a personal purpose. it is a book store that allows the user to save books edit and delete them any time.
+> A Website App built with React and Api (Json-serve) for a personal purpose. it is a book store that allows the user to save books edit and delete them any time.
 
 # Live Demo
 
