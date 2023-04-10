@@ -1,13 +1,21 @@
 import { useState } from "react";
 import BookCreate from "./components/BookCreate";
 import BookList from "./components/BookList";
-import { v4 as uuidv4 } from "uuid";
+// import { v4 as uuidv4 } from "uuid";
+import axios from "axios";
 
 function App() {
   const [books, setBooks] = useState([]);
 
-  const createBook = (title, author) => {
-    setBooks([...books, { id: uuidv4(), title, author }]);
+  const createBook = async (title, author) => {
+    // setBooks([...books, { id: uuidv4(), title, author }]); create book in set it in the state
+
+    //add book to dblClick.json
+
+    const response = await axios.post("http://localhost:3001/books", {
+      title,
+      author,
+    });
   };
 
   const EditBook = (id, newtitle, newauthor) => {
