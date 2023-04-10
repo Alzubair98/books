@@ -16,6 +16,8 @@ function App() {
       title,
       author,
     });
+
+    setBooks([...books, response.data]);
   };
 
   const EditBook = (id, newtitle, newauthor) => {
