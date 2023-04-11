@@ -31,19 +31,30 @@ function App() {
   };
 
   const EditBook = async (id, newtitle, newauthor) => {
-    setBooks(
-      books.map((book) => {
-        if (book.id === id) {
-          return { ...book, title: newtitle, author: newauthor };
-        }
-        return book;
-      })
-    );
+    // TO UPDATE THE STATE
+    // setBooks(
+    //   books.map((book) => {
+    //     if (book.id === id) {
+    //       return { ...book, title: newtitle, author: newauthor };
+    //     }
+    //     return book;
+    //   })
+    // );
 
     const response = await axios.put(`http://localhost:3001/books/${id}`, {
       title: newtitle,
       author: newauthor,
     });
+
+    //TO UPDATE THE DATA FROM THE API
+    setBooks(
+      books.map((book) => {
+        if (book.id === id) {
+          return { ...book, ...response.data };
+        }
+        return book;
+      })
+    );
   };
 
   const DeleteBookById = async (id) => {
