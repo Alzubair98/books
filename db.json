@@ -4,6 +4,11 @@
       "title": "new book",
       "author": "new author",
       "id": 2
+    },
+    {
+      "title": "author 1",
+      "author": "title 1",
+      "id": 3
     }
   ]
 }
