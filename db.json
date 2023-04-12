@@ -1,9 +1,9 @@
 {
   "books": [
     {
-      "title": "helo",
-      "author": "",
-      "id": 1
+      "title": "new book",
+      "author": "new author",
+      "id": 2
     }
   ]
 }
