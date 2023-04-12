@@ -1,19 +1,9 @@
 {
   "books": [
     {
-      "title": "new book",
+      "title": "new book1",
       "author": "new author",
       "id": 2
-    },
-    {
-      "title": "author 1",
-      "author": "title 1",
-      "id": 3
-    },
-    {
-      "title": "hi",
-      "author": "",
-      "id": 4
     }
   ]
 }
