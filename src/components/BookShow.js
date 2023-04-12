@@ -6,10 +6,6 @@ const BookShow = ({ book }) => {
   const [showEdit, setShowEdit] = useState(false);
   const { EditBook, DeleteBookById } = useContext(BooksContext);
 
-  const handleDelete = () => {
-    DeleteBookById(book.id);
-  };
-
   const handleShow = (id, title, author) => {
     EditBook(id, title, author);
     setShowEdit(false);
@@ -17,7 +13,11 @@ const BookShow = ({ book }) => {
 
   return (
     <div className="book-show">
-      <button className="delete" type="submit" onClick={handleDelete}>
+      <button
+        className="delete"
+        type="submit"
+        onClick={() => DeleteBookById(book.id)}
+      >
         X
       </button>
       <button className="edit" onClick={() => setShowEdit(!showEdit)}>
