@@ -46,12 +46,16 @@ const Provider = ({ children }) => {
     const response = await axios.delete(`http://localhost:3001/books/${id}`);
   };
 
-  const valueToShare = () => {
-    books, fetchBooks, createBook, EditBook, DeleteBookById;
+  const valueToShare = {
+    books,
+    fetchBooks,
+    createBook,
+    EditBook,
+    DeleteBookById,
   };
 
   return (
-    <BooksContext.Provider value={{ valueToShare }}>
+    <BooksContext.Provider value={valueToShare}>
       {children}
     </BooksContext.Provider>
   );
