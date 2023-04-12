@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const BookEdit = ({ book, onEdit, handleShow }) => {
+const BookEdit = ({ book, handleShow }) => {
   const [title, setTitle] = useState(book.title);
   const [author, setAuthor] = useState(book.author);
 
