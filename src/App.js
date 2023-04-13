@@ -1,11 +1,11 @@
-import { useEffect, useContext } from "react";
+import { useEffect } from "react";
 import BookCreate from "./components/BookCreate";
 import BookList from "./components/BookList";
-import BooksContext from "./context/books";
+import useBooksContext from "./hooks/use_books_context";
 // import { v4 as uuidv4 } from "uuid";
 
 function App() {
-  const { fetchBooks } = useContext(BooksContext);
+  const { fetchBooks } = useBooksContext();
 
   useEffect(() => {
     fetchBooks();
@@ -13,12 +13,12 @@ function App() {
 
   return (
     <div className="app">
-
-      <h1>Reading List (the project is using local server to save the data, i will
-        modifiy it soon)</h1>
+      <h1>
+        Reading List (the project is using local server to save the data, i will
+        modifiy it soon)
+      </h1>
       <BookCreate />
       <BookList />
-
     </div>
   );
 }
