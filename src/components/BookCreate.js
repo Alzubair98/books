@@ -5,13 +5,15 @@ import useBooksContext from "../hooks/use_books_context";
 const BookCreate = () => {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
+  const [category, setCategory] = useState("");
   const { createBook } = useBooksContext();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    createBook(title, author);
+    createBook(title, author, category);
     setTitle("");
     setAuthor("");
+    setCategory("");
   };
 
   return (
@@ -31,6 +33,12 @@ const BookCreate = () => {
           className="input"
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
+        />
+        <label>Category</label>
+        <input
+          className="input"
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
         />
         <button className="button" type="submit">
           Create

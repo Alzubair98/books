@@ -6,8 +6,8 @@ const BookShow = ({ book }) => {
   const [showEdit, setShowEdit] = useState(false);
   const { EditBook, DeleteBookById } = useBooksContext();
 
-  const handleShow = (id, title, author) => {
-    EditBook(id, title, author);
+  const handleShow = (id, title, author, category) => {
+    EditBook(id, title, author, category);
     setShowEdit(false);
   };
 
@@ -28,6 +28,7 @@ const BookShow = ({ book }) => {
         <div>
           <h2>Book Title: {book.title}</h2>
           <h2>Book Author: {book.author}</h2>{" "}
+          <h2>Book Category: {book.category}</h2>
         </div>
       ) : (
         <BookEdit book={book} handleShow={handleShow} />

@@ -1,35 +1,62 @@
 import { createContext, useState } from "react";
 import axios from "axios";
+import { v4 as uuidv4 } from "uuid";
 
 const BooksContext = createContext();
+
+const appId = "t6wT84TuMQse8pHsb6Fm";
+const url =
+  "https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps";
 
 const Provider = ({ children }) => {
   const [books, setBooks] = useState([]);
 
   const fetchBooks = async () => {
-    const response = await axios.get("http://localhost:3001/books");
+    const response = await axios.get(`${url}/${appId}/books/`);
 
-    setBooks(response.data);
+    const easyData = response.data;
+    const data = Object.keys(easyData).map((key) => ({
+      id: key,
+      ...easyData[key][0],
+    }));
+
+    setBooks(data);
   };
 
-  const createBook = async (title, author) => {
-    const response = await axios.post("http://localhost:3001/books", {
+  const createBook = async (title, author, category) => {
+    const response = await axios.post(`${url}/${appId}/books/`, {
+      item_id: uuidv4(),
       title,
       author,
+      category,
     });
 
-    setBooks([...books, response.data]);
+    const getData = await axios.get(`${url}/${appId}/books/`);
+
+    const easyData = getData.data;
+    const data = Object.keys(easyData).map((key) => ({
+      id: key,
+      ...easyData[key][0],
+    }));
+
+    setBooks(data);
   };
 
-  const EditBook = async (id, newtitle, newauthor) => {
-    const response = await axios.put(`http://localhost:3001/books/${id}`, {
-      title: newtitle,
-      author: newauthor,
-    });
+  const EditBook = async (id, newtitle, newauthor, newcategory) => {
+    // const response = await axios.put(`http://localhost:3001/books/${id}`, {
+    //   title: newtitle,
+    //   author: newauthor,
+    //   category: newcategory,
+    // });
     setBooks(
       books.map((book) => {
         if (book.id === id) {
-          return { ...book, ...response.data };
+          return {
+            ...book,
+            title: newtitle,
+            author: newauthor,
+            category: newcategory,
+          };
         }
         return book;
       })
@@ -43,7 +70,7 @@ const Provider = ({ children }) => {
       })
     );
 
-    const response = await axios.delete(`http://localhost:3001/books/${id}`);
+    const response = await axios.delete(`${url}/${appId}/books/${id}`);
   };
 
   const valueToShare = {

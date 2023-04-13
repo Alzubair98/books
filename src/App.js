@@ -13,10 +13,13 @@ function App() {
 
   return (
     <div className="app">
-      <h1>
-        Reading List (the project is using local server to save the data, i will
-        modifiy it soon)
-      </h1>
+      <h1>Reading List</h1>
+      <span>
+        <strong>
+          The api im using dose not support edit function so the edit will not
+          be saved
+        </strong>
+      </span>
       <BookCreate />
       <BookList />
     </div>
