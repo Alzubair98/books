@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useCallback } from "react";
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
 
@@ -11,7 +11,7 @@ const url =
 const Provider = ({ children }) => {
   const [books, setBooks] = useState([]);
 
-  const fetchBooks = async () => {
+  const fetchBooks = useCallback(async () => {
     const response = await axios.get(`${url}/${appId}/books/`);
 
     const easyData = response.data;
@@ -21,7 +21,7 @@ const Provider = ({ children }) => {
     }));
 
     setBooks(data);
-  };
+  }, []);
 
   const createBook = async (title, author, category) => {
     const response = await axios.post(`${url}/${appId}/books/`, {
