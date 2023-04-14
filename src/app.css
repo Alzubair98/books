@@ -1,5 +1,7 @@
 .text-warning{
     display: flex;
     justify-content: center;
+    color: red;
+    text-transform: capitalize;
 
 }
